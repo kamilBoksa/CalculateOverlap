@@ -47,4 +47,9 @@ public class AreaCalculatorTest {
         int actual = areaCalculator.calculateOverlap(-12, -4, -1, -2, 0, 0, 100, 3000);
         assertEquals(expected,actual);
     }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void calculateOverlap_throwExceptionIfCalculatedAreaBeyondIntegerValue() {
+        areaCalculator.calculateOverlap(2147483647,2147483647, -2147483648, -2147483648, 2147483645, 2147483645, -2147483645, -2147483645);
+    }
     }
