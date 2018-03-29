@@ -18,7 +18,7 @@ public class AreaCalculator {
         int commonPartBottomLeftX;
         int commonPartBottomLeftY;
 
-        if(!doRectanglesHaveACommonPart(topRightX,  topRightY,  bottomLeftX,  bottomLeftY,
+        if(!checkIfRectanglesHaveCommonPart(topRightX,  topRightY,  bottomLeftX,  bottomLeftY,
          topRightX2,  topRightY2,  bottomLeftX2,  bottomLeftY2)) {
             return 0;
         }
@@ -29,7 +29,7 @@ public class AreaCalculator {
         return calculateRectangleArea(commonPartBottomLeftX, commonPartBottomLeftY, commonPartTopRightX, commonPartTopRightY);
     }
 
-    private boolean doRectanglesHaveACommonPart(int topRightX, int topRightY, int bottomLeftX, int bottomLeftY,
+    private boolean checkIfRectanglesHaveCommonPart(int topRightX, int topRightY, int bottomLeftX, int bottomLeftY,
                                                 int topRightX2, int topRightY2, int bottomLeftX2, int bottomLeftY2) {
         if(topRightX < bottomLeftX2 || bottomLeftX > topRightX2 || bottomLeftY >= topRightY2 || topRightY <= bottomLeftY2) {
             return false;
